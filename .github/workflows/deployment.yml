@@ -6,10 +6,10 @@ on:
 env:
   AWS_REGION: us-east-2
   ECR_REPOSITORY: gestorprime
-  ECS_SERVICE: gestorprime-s2
-  ECS_CLUSTER: prodCluster
-  ECS_TASK_DEFINITION: gestorprime-2
-  CONTAINER_NAME: laravel
+  ECS_SERVICE: gestorprime-s
+  ECS_CLUSTER: prodClusterPrime
+  ECS_TASK_DEFINITION: gestorprime
+  CONTAINER_NAME: gestorprime
 
 jobs:
   deploy:
