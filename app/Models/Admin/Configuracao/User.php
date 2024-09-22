@@ -62,7 +62,7 @@ class User extends Authenticatable
         $user = Auth::user();
 
         if($user->root == 1 || $user->admin == 1) {
-            $listUsers = $user->empresas->where('tipo_empresa', 'M')->first()->listEmpresa->pluck('id')->toArray();
+            $listUsers =!empty($user->empresas->count()) ? $user->empresas->where('tipo_empresa', 'M')->first()->listEmpresa->pluck('id')->toArray() : collect([]);
             $query = $query->whereHas('empresas', function (Builder $query) use ($listUsers) {
                 $query->whereIn('empresas.id', $listUsers);
             });

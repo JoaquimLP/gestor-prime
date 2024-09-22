@@ -43,7 +43,7 @@ class UnidadeAtendimento extends Model
             $user = Auth::user();
 
             if($user->root == 1 || $user->admin == 1) {
-                $listUsers = $user->empresas->where('tipo_empresa', 'M')->first()->listEmpresa->pluck('id')->toArray();
+                $listUsers = !empty($user->empresas->count()) ? $user->empresas->where('tipo_empresa', 'M')->first()->listEmpresa->pluck('id')->toArray() : collect([]);
                 $builder->whereIn('empresa_id', $listUsers);
             } else {
                 $listUsers = $user->empresas->pluck('id')->toArray();

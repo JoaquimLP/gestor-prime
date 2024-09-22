@@ -29,7 +29,7 @@ class Especialidade extends Model
             $user = Auth::user();
 
             if($user->root == 1 || $user->admin == 1) {
-                $listUsers = $user->empresas->where('tipo_empresa', 'M')->first()->listEmpresa->pluck('id')->toArray();
+                $listUsers = !empty($user->empresas->count()) ? $user->empresas->where('tipo_empresa', 'M')->first()->listEmpresa->pluck('id')->toArray() : collect([]);
             } else {
                 $listUsers = [$user->empresas->first()->empresaMatriz->id];
             }
