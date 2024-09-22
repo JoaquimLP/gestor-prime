@@ -1,0 +1,80 @@
+{
+    "name": "wnx/sidecar-browsershot",
+    "description": "A Sidecar function to run Browsershot on Lambda.",
+    "keywords": [
+        "wnx",
+        "laravel",
+        "sidecar",
+        "browsershot",
+        "lambda",
+        "sidecar-browsershot"
+    ],
+    "homepage": "https://github.com/stefanzweifel/sidecar-browsershot",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefan Zweifel",
+            "email": "stefan@stefanzweifel.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "hammerstone/sidecar": "^0.4 || ^0.5 || ^0.6",
+        "illuminate/contracts": "^10.0 || ^11.0",
+        "spatie/browsershot": "^4.0",
+        "spatie/laravel-package-tools": "^1.9.2"
+    },
+    "require-dev": {
+        "ext-imagick": "*",
+        "larastan/larastan": "^1.0|^2.0",
+        "laravel/pint": "^1.13",
+        "league/flysystem-aws-s3-v3": "^1.0|^2.0|^3.0",
+        "nunomaduro/collision": "^7.0|^8.0",
+        "orchestra/testbench": "^8.0|^9.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^10 | ^11.0",
+        "spatie/image": "^3.3",
+        "spatie/pixelmatch-php": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wnx\\SidecarBrowsershot\\": "src",
+            "Wnx\\SidecarBrowsershot\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wnx\\SidecarBrowsershot\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "download-emoji-font": "sh ./bin/download-emoji-font.sh"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wnx\\SidecarBrowsershot\\SidecarBrowsershotServiceProvider"
+            ],
+            "aliases": {
+                "SidecarBrowsershot": "Wnx\\SidecarBrowsershot\\Facades\\SidecarBrowsershot"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
