@@ -1,5 +1,5 @@
 {{-- <script defer src="bundle.js"></script> --}}
-@livewireScripts
+@livewireScriptConfig
 
 @stack("scripts")
 
