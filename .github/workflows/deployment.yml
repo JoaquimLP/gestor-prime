@@ -6,7 +6,7 @@ on:
 env:
   AWS_REGION: us-east-2
   ECR_REPOSITORY: gestorprime
-  ECS_SERVICE: gestorprime-s
+  ECS_SERVICE: gestorpime-s
   ECS_CLUSTER: prodClusterPrime
   ECS_TASK_DEFINITION: gestorprime
   CONTAINER_NAME: gestorprime
