@@ -3,7 +3,6 @@
 
     <!-- ====== Table Section Start -->
     <div class="mx-auto p-4 md:p-6 2xl:p-10">
-
         <x-table.table-component :resource="$documentos" :delete="route('cadastro.medico.documentos.destroy', $medico->id)" :columns="[
             ['label' => 'Descrição', 'column' => 'descricao', 'upload' => false],
             ['label' => 'Link', 'column' => 'path', 'upload' => true],

@@ -44,12 +44,13 @@
                                             <div id="{{ $item->id }}-dropdown"
                                                 class="hidden z-10 w-auto bg-blue-600 text-white text-start rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
                                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="{{ $item->id }}-dropdown-button" style="width: 11rem">
-                                                    <li>
-                                                        <a href="#" wire:click="show({{ $item->id }})" class="block p-1  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                                            Ver
-                                                        </a>
-                                                    </li>
-
+                                                    @if ($hasShow)
+                                                        <li>
+                                                            <a href="#" wire:click="show({{ $item->id }})" class="block p-1  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                                                Ver
+                                                            </a>
+                                                        </li>
+                                                    @endif
                                                     @foreach ($routes as $route)
                                                         <li>
                                                             <a href="{{ isset($route["url"]) ? route($route["url"], $item->id) : "#" }}" class="block p-1 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">

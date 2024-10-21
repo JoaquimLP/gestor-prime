@@ -3,7 +3,7 @@
 
     <!-- ====== Table Section Start -->
     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-        <livewire:table.table-component :include="'admin.cadastro.documento.show'" :title="'Documentos'" :resource="'Admin\Cadastro\Documento'" :columns="[['label' => 'Titulo', 'column' => 'descricao']]"
+        <livewire:table.table-component :include="'admin.cadastro.documento.show'" :title="'Documentos'" :hasShow="false" :resource="'Admin\Cadastro\Documento'" :columns="[['label' => 'Titulo', 'column' => 'descricao']]"
             :routes="[
                 ['url' => 'cadastro.documento.edit', 'name' => 'Editar'],
                 ['url' => 'cadastro.documento.destroy', 'name' => 'Excluir'],

@@ -17,6 +17,7 @@ class TableComponent extends Component
     public array $columns;
     public array $routes;
     public bool $modalOpen = false;
+    public $hasShow = true;
 
     protected $listeners = ['close' => 'close'];
 
