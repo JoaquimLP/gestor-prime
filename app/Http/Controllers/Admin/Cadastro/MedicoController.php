@@ -46,7 +46,6 @@ class MedicoController extends Controller
         ]);
 
         Medico::create($request->all());
-
         return redirect()->route("cadastro.medico.index");
     }
 
