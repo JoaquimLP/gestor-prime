@@ -12,7 +12,7 @@
                     <x-form.input-text class="my-2 mx-1 w-full lg:w-1/3" name="tipo_conta" placeholder="" label="Tipo da Conta" value="" />
                     <x-form.input-text class="my-2 mx-1 w-full lg:w-1/3" name="agencia" placeholder="" label="Digite a agência" value="" />
                     <x-form.input-text class="my-2 mx-1 w-full lg:w-1/3" name="conta" placeholder="" label="Digite a conta (com dígito)" value="" />
-                </x-form.form-row class="gap-1">
+                </x-form.form-row>
                 <x-form.form-row >
                     <x-form.input-text class="my-2 mx-1 w-full lg:w-1/2" name="pix" placeholder="" label="Chave do Pix" value="" />
                     <x-form.input-text class="my-2 mx-1 w-full lg:w-1/3" name="cpf" placeholder="" label="CPF" value="" />
@@ -21,7 +21,4 @@
             </x-form.form-layout>
         </div>
     </div>
-    @push('scripts')
-        @include('admin.cadastro.medico.documento.include.script')
-    @endpush
 </x-app-layout>
