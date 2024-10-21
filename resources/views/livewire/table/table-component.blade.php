@@ -17,7 +17,6 @@
                                 @endif
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach ($collect as $item)
                                 <tr class="border-b border-neutral-200 dark:border-white/10">
@@ -26,6 +25,8 @@
                                             <x-table.td>{{ limit(data_get($item, $column['column']), 30) }}</x-table.td>
                                         @elseif (isset($column["hasDate"]) && $column["hasDate"] == true)
                                             <x-table.td>{{ date_mask(data_get($item, $column['column'])) }}</x-table.td>
+                                        @elseif (isset($column["function"]) && empty($column["column"]))
+                                            <x-table.td>{{$item->getFuncao() }}</x-table.td>
                                         @else
                                             <x-table.td>{{ data_get($item, $column['column']) }}</x-table.td>
                                         @endif

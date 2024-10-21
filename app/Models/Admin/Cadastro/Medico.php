@@ -84,4 +84,9 @@ class Medico extends Model
             $builder->whereIn('empresa_id', $listUsers);
         });
     }
+
+    public function getFuncao()
+    {
+        return $this->especialidades->first()->nome;
+    }
 }

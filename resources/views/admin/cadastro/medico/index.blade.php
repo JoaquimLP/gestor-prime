@@ -5,7 +5,7 @@
     <div class="mx-auto p-4 md:p-6 2xl:p-10">
         <livewire:table.table-component :include="'admin.cadastro.medico.show'" :title="'Médico'" :resource="'Admin\Cadastro\Medico'" :columns="[
             ['label' => 'Médico', 'column' => 'nome'],
-            ['label' => 'Função', 'column' => ''],
+            ['label' => 'Função', 'column' => '', 'function' => 'getFuncao'],
             ['label' => 'Celular', 'column' => 'celular'],
             ['label' => 'Email', 'column' => 'email'],
             ['label' => 'Cidade', 'column' => 'cidade_desc'],
