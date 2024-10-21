@@ -260,4 +260,11 @@ if (! function_exists('situacao_contrato')) {
     }
 }
 
+if (! function_exists('date_mask')) {
+    function date_mask($date)
+    {
 
+        $date = new DateTime( $date );
+        return $date->format( 'd/m/Y' );
+    }
+}

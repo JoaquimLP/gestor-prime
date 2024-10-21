@@ -24,6 +24,8 @@
                                     @foreach ($columns as $column)
                                         @if ($column["column"] == "descricao")
                                             <x-table.td>{{ limit(data_get($item, $column['column']), 30) }}</x-table.td>
+                                        @elseif (isset($column["hasDate"]) && $column["hasDate"] == true)
+                                            <x-table.td>{{ date_mask(data_get($item, $column['column'])) }}</x-table.td>
                                         @else
                                             <x-table.td>{{ data_get($item, $column['column']) }}</x-table.td>
                                         @endif
