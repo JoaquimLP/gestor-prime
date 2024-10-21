@@ -35,11 +35,6 @@
                                             <a href="{{ $delete . '?item_id='. $item->id }}" class="text-center">Excluir</a>
                                         </x-table.td>
                                     @endif
-                                    @if (isset($delete))
-                                        <x-table.td >
-                                            <a href="{{ $delete . '?item_id='. $item->id }}" class="text-center">Excluir</a>
-                                        </x-table.td>
-                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
