@@ -9,7 +9,6 @@ WORKDIR /app
 COPY . .
 
 RUN composer install --no-dev --no-interaction --prefer-dist
-RUN sudo apt-get install php8.2-gd
 
 COPY docker/production/start-container /usr/local/bin/start-container
 RUN chmod +x /usr/local/bin/start-container
