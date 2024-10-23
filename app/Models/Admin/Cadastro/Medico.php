@@ -87,6 +87,6 @@ class Medico extends Model
 
     public function getFuncao()
     {
-        return $this->especialidades->first()->nome;
+        return $this->especialidades->first()->nome ?? null;
     }
 }
